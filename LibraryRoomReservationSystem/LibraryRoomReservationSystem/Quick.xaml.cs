@@ -88,7 +88,8 @@ namespace LibraryRoomReservationSystem
             }
             catch (Exception e)
             {
-                throw;
+                //throw;
+                myClient.ShowMessage("快速预约", "网络错误！");
             }
         }
     }

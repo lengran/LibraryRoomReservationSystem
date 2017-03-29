@@ -85,7 +85,7 @@ namespace LibraryRoomReservationSystem
                 }
                 else
                 {
-                    myClient.ShowMessage("登陆失败", "网络故障");
+                    myClient.ShowMessage("出错啦", "程序异常，请检查网络状态！");
                     progrLogin.IsEnabled = false;
                     txtUsername.IsEnabled = true;
                     pwdPassword.IsEnabled = true;
@@ -94,7 +94,10 @@ namespace LibraryRoomReservationSystem
             catch (Exception e)
             {
                 myClient.ShowMessage("出错啦", "程序异常，请检查网络状态！");
-                throw;
+                //throw;
+                progrLogin.IsEnabled = false;
+                txtUsername.IsEnabled = true;
+                pwdPassword.IsEnabled = true;
             }
         }
 

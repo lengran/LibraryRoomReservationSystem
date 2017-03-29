@@ -99,7 +99,8 @@ namespace LibraryRoomReservationSystem
             }
             catch (Exception e)
             {
-                throw;
+                //throw;
+                myClient.ShowMessage("结束使用", "网络错误！");
             }
         }
 
@@ -133,7 +134,8 @@ namespace LibraryRoomReservationSystem
             }
             catch (Exception e)
             {
-                throw;
+                //throw;
+                myClient.ShowMessage("签到", "网络错误！");
             }
         }
 
@@ -167,7 +169,8 @@ namespace LibraryRoomReservationSystem
             }
             catch (Exception e)
             {
-                throw;
+                //throw;
+                myClient.ShowMessage("暂离", "网络错误！");
             }
         }
 
@@ -203,7 +206,8 @@ namespace LibraryRoomReservationSystem
                 }
                 catch (Exception e)
                 {
-                    throw;
+                    //throw;
+                    myClient.ShowMessage("续座", "网络错误！");
                 }
             }
             else
@@ -246,7 +250,8 @@ namespace LibraryRoomReservationSystem
         //    }
         //    catch (Exception e)
         //    {
-        //        throw;
+        //        //throw;
+        //        myClient.ShowMessage("获取预约状态", "网络错误！");
         //    }
         //}
 
@@ -302,7 +307,8 @@ namespace LibraryRoomReservationSystem
                             }
                             catch (Exception e)
                             {
-                                throw;
+                                //throw;
+                                myClient.ShowMessage("取消预约", "网络错误！");
                             }
                         }
                     }
@@ -311,7 +317,8 @@ namespace LibraryRoomReservationSystem
                 }
                 catch (Exception e)
                 {
-                    throw;
+                    //throw;
+                    myClient.ShowMessage("查看当前预约", "网络错误！");
                 }
             }
             else
@@ -383,7 +390,8 @@ namespace LibraryRoomReservationSystem
             }
             catch (Exception e)
             {
-                throw;
+                //throw;
+                myClient.ShowMessage("获取状态", "网络错误！");
             }
         }
     }
