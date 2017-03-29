@@ -170,6 +170,9 @@ App_Data/*.ldf
 *Key.pfx
 Package.StoreAssociation.xml
 
+# Other Files
+BundleArtifacts/
+
 #############
 ## Windows detritus
 #############

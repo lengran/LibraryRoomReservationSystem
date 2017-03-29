@@ -1,1 +1,1 @@
-D:\Files\Programming\UWP\LibraryRoomReservationSystem\LibraryRoomReservationSystem\AppPackages\LibraryRoomReservationSystem_1.0.1.0\LibraryRoomReservationSystem_1.0.1.0_x86_x64_arm.appxbundle
+D:\Files\Programming\UWP\LibraryRoomReservationSystem\LibraryRoomReservationSystem\LibraryRoomReservationSystem\AppPackages\LibraryRoomReservationSystem_1.0.2.0\LibraryRoomReservationSystem_1.0.2.0_x86_x64_arm.appxbundle
