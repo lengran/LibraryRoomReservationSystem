@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="LibraryRoomReservationSystem.ServerSettingPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LibraryRoomReservationSystem"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Text="http://seat."/>
+        <TextBox Grid.Column="1" x:Name="txtServerAddr" Text="lib.whu" Height="Auto" HorizontalAlignment="Stretch" IsEnabled="False"/>
+        <TextBlock Grid.Column="2" Text=".edu.cn/"/>
+    </Grid>
+</UserControl>

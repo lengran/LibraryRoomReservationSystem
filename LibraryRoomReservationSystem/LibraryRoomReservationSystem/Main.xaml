@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="LibraryRoomReservationSystem.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LibraryRoomReservationSystem"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="首页" Style="{StaticResource HeaderTextBlockStyle}"  Margin="6,6,0,12"/>
+        <AppBarButton Grid.Row="0" Icon="Refresh" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Refresh_Click"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <Button x:Name="bCheckIn" Content="签到" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="CheckIn_Click"/>
+            <Button x:Name="bLeave" Content="暂离" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="Leave_Click"/>
+            <Button x:Name="bTimeExtend" Content="续座" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="TimeExtend_Click"/>
+            <Button x:Name="bStopUsing" Content="结束使用" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="Stop_Click"/>
+            <Button Content="当前预约" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="History_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
