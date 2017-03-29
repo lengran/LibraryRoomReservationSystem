@@ -13,6 +13,6 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="关于" Style="{StaticResource HeaderTextBlockStyle}" Margin="6,6,0,12"/>
-        <TextBlock Grid.Row="1" Text="    还未完工。&#x000A;    反馈邮箱：lengransiren@163.com&#x000A;    说明一下，主页上的按钮都已经完工，只有当前有预约时，“签到”、“续座”、“结束使用”按钮才可以发挥作用，没有预约时这些按钮不能使用。" TextWrapping="Wrap" Margin="6,6,0,12"/>
+        <TextBlock Grid.Row="1" Text="    还未完工。&#x000A;    反馈邮箱：lengransiren@163.com&#x000A;    说明一下，主页上的按钮都已经完工，只有当前有预约时，“签到”、“暂离”、“续座”、“结束使用”按钮才可以发挥作用，没有预约时这些按钮不能使用。&#x000A;    校园卡部分是直接调用的学校充值页面的网页，同iOS版掌上武大一样，各位放心使用就好。&#x000A;    另外暂时还不支持选第二天的座位，会在后面完善选座的时候添加这个选项的。" TextWrapping="Wrap" Margin="6,6,0,12"/>
     </Grid>
 </Page>
