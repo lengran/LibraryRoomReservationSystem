@@ -19,7 +19,7 @@
 
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="关于" Click="About_Click"/>
-                <AppBarButton Label="注销" IsEnabled="False" Click="SignOut_Click"/>
+                <AppBarButton Label="注销" Click="SignOut_Click"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
