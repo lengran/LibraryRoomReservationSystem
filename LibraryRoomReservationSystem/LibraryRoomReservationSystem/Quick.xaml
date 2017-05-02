@@ -17,8 +17,25 @@
         <Grid Grid.Row="1">
             <ComboBox x:Name="selectBuilding" Header="请选择场馆：" HorizontalAlignment="Stretch"/>
         </Grid>
-        <StackPanel Grid.Row="2">
-            <Button Content="预约1小时" Click="Test_Click"/>
-        </StackPanel>
+        <Grid x:Name="buttonContainer" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
     </Grid>
 </Page>
