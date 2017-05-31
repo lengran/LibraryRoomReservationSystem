@@ -366,6 +366,16 @@ namespace LibraryRoomReservationSystem
                                 bStopUsing.IsEnabled = false;
                                 break;
                             case "CHECK_IN":
+                                bLeave.Content = "暂离";
+                                bLeave.Click += Leave_Click;
+                                bCheckIn.IsEnabled = false;
+                                bLeave.IsEnabled = true;
+                                bTimeExtend.IsEnabled = true;
+                                bStopUsing.IsEnabled = true;
+                                break;
+                            case "AWAY":
+                                bLeave.Content = "返回";
+                                bLeave.Click += CheckIn_Click;
                                 bCheckIn.IsEnabled = false;
                                 bLeave.IsEnabled = true;
                                 bTimeExtend.IsEnabled = true;
@@ -373,6 +383,7 @@ namespace LibraryRoomReservationSystem
                                 break;
                             default:
                                 myClient.ShowMessage("状态载入错误", "没有预料到您现在的状态呢，欢迎反馈到邮箱里，现在已经给您开放所有按钮了！");
+                                bCheckIn.Content = "签到 & 返回";
                                 bCheckIn.IsEnabled = true;
                                 bLeave.IsEnabled = true;
                                 bTimeExtend.IsEnabled = true;
