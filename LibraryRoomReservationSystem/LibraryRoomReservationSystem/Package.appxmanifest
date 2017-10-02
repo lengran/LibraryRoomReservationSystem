@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="10378229B2AB7.209253AB8F271" Publisher="CN=F4977C44-7185-4D0E-82CC-5125DDB11E6A" Version="1.1.1.0" />
+  <Identity Name="10378229B2AB7.209253AB8F271" Publisher="CN=F4977C44-7185-4D0E-82CC-5125DDB11E6A" Version="2.0.1.0" />
   <mp:PhoneIdentity PhoneProductId="3f9de26a-ba2d-4944-ac5a-6fd1fb04c007" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>武汉大学图书馆座位预约系统(第三方)</DisplayName>

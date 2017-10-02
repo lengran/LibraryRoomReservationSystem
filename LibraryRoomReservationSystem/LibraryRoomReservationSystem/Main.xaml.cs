@@ -73,7 +73,7 @@ namespace LibraryRoomReservationSystem
         {
             try
             {
-                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/stop?token=" + myClient.token));
+                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/stop?token=" + myClient.token));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
@@ -108,7 +108,7 @@ namespace LibraryRoomReservationSystem
         {
             try
             {
-                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/checkIn?token=" + myClient.token));
+                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/checkIn?token=" + myClient.token));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
@@ -143,7 +143,7 @@ namespace LibraryRoomReservationSystem
         {
             try
             {
-                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/leave?token=" + myClient.token));
+                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/leave?token=" + myClient.token));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
@@ -180,7 +180,7 @@ namespace LibraryRoomReservationSystem
             {
                 try
                 {
-                    HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/timeExtend/" + myClient.reservationID.ToString() + "?token=" + myClient.token));
+                    HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/timeExtend/" + myClient.reservationID.ToString() + "?token=" + myClient.token));
                     if (response.IsSuccessStatusCode)
                     {
                         Debug.WriteLine(response.Content.ToString());
@@ -261,7 +261,7 @@ namespace LibraryRoomReservationSystem
             {
                 try
                 {
-                    HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/view/" + id.ToString() + "?token=" + myClient.token));
+                    HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/view/" + id.ToString() + "?token=" + myClient.token));
                     if (response.IsSuccessStatusCode)
                     {
                         Debug.WriteLine(response.Content.ToString());
@@ -272,7 +272,7 @@ namespace LibraryRoomReservationSystem
                             Content = "凭证号：" + JSResponse.GetNamedString("receipt") + "\n日期：" + JSResponse.GetNamedString("onDate") + "\n时间：" + JSResponse.GetNamedString("begin") + " - " + JSResponse.GetNamedString("end") + "\n地点：" + JSResponse.GetNamedString("location"),
                             PrimaryButtonText = "确认",
                         };
-                        if (!myClient.status.Equals("none"))
+                        if (myClient.status.Equals("RESERVE"))
                         {
                             dialog.SecondaryButtonText = "取消预约";
                         }
@@ -281,7 +281,7 @@ namespace LibraryRoomReservationSystem
                         {
                             try
                             {
-                                response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/cancel/" + myClient.reservationID + "?token=" + myClient.token));
+                                response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/cancel/" + myClient.reservationID + "?token=" + myClient.token));
                                 if (response.IsSuccessStatusCode)
                                 {
                                     Debug.WriteLine(response.Content.ToString());
@@ -331,7 +331,7 @@ namespace LibraryRoomReservationSystem
         {
             try
             {
-                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/user/reservations?token=" + myClient.token));
+                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/user/reservations?token=" + myClient.token));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
@@ -360,24 +360,23 @@ namespace LibraryRoomReservationSystem
                             case "none":
                                 break;
                             case "RESERVE":
+                                bCheckIn.Content = "签到";
                                 bCheckIn.IsEnabled = true;
                                 bLeave.IsEnabled = false;
                                 bTimeExtend.IsEnabled = false;
                                 bStopUsing.IsEnabled = false;
                                 break;
                             case "CHECK_IN":
-                                bLeave.Content = "暂离";
-                                bLeave.Click += Leave_Click;
+                                bCheckIn.Content = "签到";
                                 bCheckIn.IsEnabled = false;
                                 bLeave.IsEnabled = true;
                                 bTimeExtend.IsEnabled = true;
                                 bStopUsing.IsEnabled = true;
                                 break;
                             case "AWAY":
-                                bLeave.Content = "返回";
-                                bLeave.Click += CheckIn_Click;
-                                bCheckIn.IsEnabled = false;
-                                bLeave.IsEnabled = true;
+                                bCheckIn.Content = "返回";
+                                bCheckIn.IsEnabled = true;
+                                bLeave.IsEnabled = false;
                                 bTimeExtend.IsEnabled = true;
                                 bStopUsing.IsEnabled = true;
                                 break;

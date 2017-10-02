@@ -30,7 +30,6 @@
         <StackPanel Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center">
             <ProgressRing x:Name="progrLogin" HorizontalAlignment="Center" IsEnabled="False"/>
             <Button x:Name="bLogin" Content="登录" HorizontalAlignment="Stretch" Click="bLogin_Click"/>
-            <!--<Button Content="Debug" Click="Debug_Click"/>-->
         </StackPanel>
     </Grid>
 </Page>

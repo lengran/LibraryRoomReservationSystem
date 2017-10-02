@@ -14,12 +14,14 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="首页" Style="{StaticResource HeaderTextBlockStyle}"  Margin="6,6,0,12"/>
         <AppBarButton Grid.Row="0" Icon="Refresh" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Refresh_Click"/>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <Button x:Name="bCheckIn" Content="签到" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="CheckIn_Click"/>
-            <Button x:Name="bLeave" Content="暂离" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="Leave_Click"/>
-            <Button x:Name="bTimeExtend" Content="续座" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="TimeExtend_Click"/>
-            <Button x:Name="bStopUsing" Content="结束使用" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="Stop_Click"/>
-            <Button Content="当前预约" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="History_Click"/>
-        </StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled" VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Center">
+                <Button x:Name="bCheckIn" Content="签到" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="CheckIn_Click"/>
+                <Button x:Name="bLeave" Content="暂离" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="Leave_Click"/>
+                <Button x:Name="bTimeExtend" Content="续座" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="TimeExtend_Click"/>
+                <Button x:Name="bStopUsing" Content="结束使用" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="Stop_Click"/>
+                <Button Content="当前预约" HorizontalAlignment="Center" Width="150" Margin="10,10,10,10" Click="History_Click"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

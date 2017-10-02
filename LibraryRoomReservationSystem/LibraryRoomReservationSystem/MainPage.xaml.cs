@@ -59,7 +59,7 @@ namespace LibraryRoomReservationSystem
         {
             try
             {
-                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/auth?password=" + pwdPassword.Password + "&username=" + txtUsername.Text));
+                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/auth?password=" + pwdPassword.Password + "&username=" + txtUsername.Text));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
@@ -120,12 +120,6 @@ namespace LibraryRoomReservationSystem
             };
 
             await dialog.ShowAsync();
-        }
-
-        private void Debug_Click(object sender, RoutedEventArgs e)
-        {
-            txtUsername.Text = "2014301500168";
-            pwdPassword.Password = "244511";
         }
     }
 }
