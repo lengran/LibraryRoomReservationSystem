@@ -16,8 +16,8 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Column="0" Text="http://seat."/>
-        <TextBox Grid.Column="1" x:Name="txtServerAddr" Text="lib.whu" Height="Auto" HorizontalAlignment="Stretch" IsEnabled="False"/>
-        <TextBlock Grid.Column="2" Text=".edu.cn/"/>
+        <TextBlock Grid.Column="0" Text="https://"/>
+        <TextBox Grid.Column="1" x:Name="txtServerAddr" Text="" Height="20" VerticalAlignment="Top" HorizontalAlignment="Stretch" IsEnabled="False"/>
+        <TextBlock Grid.Column="2" Text="/"/>
     </Grid>
 </UserControl>

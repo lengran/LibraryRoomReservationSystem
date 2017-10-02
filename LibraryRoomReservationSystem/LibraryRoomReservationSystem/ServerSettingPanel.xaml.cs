@@ -22,6 +22,8 @@ namespace LibraryRoomReservationSystem
         public ServerSettingPanel()
         {
             this.InitializeComponent();
+
+            txtServerAddr.Text = "seat.whu.edu.cn:8443";
         }
     }
 }

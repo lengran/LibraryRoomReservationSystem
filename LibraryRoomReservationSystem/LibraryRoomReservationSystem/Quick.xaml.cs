@@ -49,7 +49,7 @@ namespace LibraryRoomReservationSystem
         {
             try
             {
-                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/allowedHours?token=" + myClient.token));
+                HttpResponseMessage response = await myClient.httpClient.GetAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/allowedHours?token=" + myClient.token));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
@@ -91,7 +91,7 @@ namespace LibraryRoomReservationSystem
                 Dictionary<string, string> tokens = new Dictionary<string, string>();
                 tokens.Add("token", myClient.token);
 
-                HttpResponseMessage response = await myClient.httpClient.PostAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/free/filters"), new HttpFormUrlEncodedContent(tokens));
+                HttpResponseMessage response = await myClient.httpClient.PostAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/free/filters"), new HttpFormUrlEncodedContent(tokens));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
@@ -164,7 +164,7 @@ namespace LibraryRoomReservationSystem
                 test.Add("hour", time);
                 test.Add("token", myClient.token);
 
-                HttpResponseMessage response = await myClient.httpClient.PostAsync(new Uri("http://seat." + myClient.serverAddr + ".edu.cn/rest/v2/quickBook"), new HttpFormUrlEncodedContent(test));
+                HttpResponseMessage response = await myClient.httpClient.PostAsync(new Uri("https://" + myClient.serverAddr + "/rest/v2/quickBook"), new HttpFormUrlEncodedContent(test));
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(response.Content.ToString());
